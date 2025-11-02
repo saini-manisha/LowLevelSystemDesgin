@@ -1,12 +1,15 @@
 package tomato;
-
-import tomato.managers.OrderManager;
-import tomato.managers.RestaurantManager;
-import tomato.models.*;
-
 import java.util.List;
+import tomato.models.*;
+import tomato.managers.*;
+import tomato.strategies.*;
+import tomato.factory.*;
+import tomato.services.NotificationService;
+import tomato.models.MenuItem;
+import tomato.models.User;
 
 public class TomatoApp {
+
     public TomatoApp() {
         initializeRestaurants();
     }
@@ -54,6 +57,7 @@ public class TomatoApp {
             }
         }
     }
+
     public Order checkoutNow(User user, String orderType, PaymentStrategy paymentStrategy) {
         return checkout(user, orderType, paymentStrategy, new NowOrderFactory());
     }
@@ -93,6 +97,4 @@ public class TomatoApp {
         System.out.println("------------------------------------");
         System.out.println("Grand total : ₹" + user.getCart().getTotalCost());
     }
-
-
 }
