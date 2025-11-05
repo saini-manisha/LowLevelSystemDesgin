@@ -111,7 +111,6 @@ class RemoteController{
 
 }
 
-
 public class CommandPattern {
     public static void main(String [] args){
         Light livingRommLight= new Light();
@@ -123,6 +122,7 @@ public class CommandPattern {
         remote.setCommand(1,new FanCommand(ceilingFan));
 
         // simulate button presses (toggle behavior)
+
 
         System.out.println("-------Toggling Light Button 0 ----");
 
