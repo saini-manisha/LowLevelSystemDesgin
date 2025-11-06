@@ -17,7 +17,7 @@ public class Playlist {
         return playlistName;
     }
 
-    public List<Song> getSongList(){
+    public List<Song> getSongs(){
         return songList;
     }
     public int getSize(){
@@ -31,4 +31,6 @@ public class Playlist {
 
         songList.add(song);
     }
+
+
 }
